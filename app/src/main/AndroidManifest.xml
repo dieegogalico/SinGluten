@@ -2,6 +2,9 @@
 <manifest package="com.checkfood.singluten"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
     <application
         android:name="com.checkfood.singluten.AndroidApplication"
         android:allowBackup="true"
