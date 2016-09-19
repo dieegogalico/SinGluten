@@ -1,6 +1,7 @@
 package com.checkfood.singluten.presentation.ui.fragments;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -15,6 +16,7 @@ import com.checkfood.singluten.app.AndroidApplication;
 import com.checkfood.singluten.domain.model.Data;
 import com.checkfood.singluten.domain.model.GithubModel;
 import com.checkfood.singluten.network.GitHubApiInterface;
+import com.checkfood.singluten.presentation.ui.activities.HomeActivity;
 import com.checkfood.singluten.presentation.ui.adapters.CardAdapter;
 
 import javax.inject.Inject;
@@ -64,7 +66,8 @@ public class SplashFragment extends BaseFragment{
         Button bFetch = (Button) view.findViewById(R.id.button_fetch);
         bClear.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                mCardAdapter.clear();
+                Intent homeIntent = new Intent(getActivity(), HomeActivity.class);
+                startActivity(homeIntent);
             }
         });
 

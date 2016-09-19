@@ -12,6 +12,7 @@ import com.checkfood.singluten.app.dependencyinjection.components.NetworkCompone
 import com.checkfood.singluten.app.dependencyinjection.modules.AppModule;
 import com.checkfood.singluten.app.dependencyinjection.modules.GitHubModule;
 import com.checkfood.singluten.app.dependencyinjection.modules.NetworkModule;
+import com.checkfood.singluten.network.GitHubApiInterface;
 import com.crittercism.app.Crittercism;
 
 import timber.log.Timber;
@@ -44,7 +45,7 @@ public class AndroidApplication extends Application {
         mNetworkComponent = DaggerNetworkComponent.builder()
                                                   // list of modules that are part of this component need to be created here too
                                                   .appModule(new AppModule(this))
-                                                  .networkModule(new NetworkModule("https://api.github.com"))
+                                                  .networkModule(new NetworkModule(GitHubApiInterface.SERVICE_ENDPOINT))
                                                   .build();
 
         mGitHubComponent = DaggerGitHubComponent.builder()

@@ -19,12 +19,10 @@ public class SplashActivity extends BaseActivity implements View {
     public void addInfoFragment() {
         SplashFragment splashFragment = SplashFragment.newInstance();
 
-        getFragmentManager()
+        getSupportFragmentManager()
                 .beginTransaction()
                 .add(R.id.fragment_container, splashFragment)
                 .commit();
-
-
     }
 
     @Override
